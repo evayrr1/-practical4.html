@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 4</title>
+    <!-- Linking Roboto font in Regular and Bold weights -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        /* Universal selector to set font-family to Roboto regular and standard paddings and margins for all elements */
+        * {
+            font-family: 'Roboto', sans-serif;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* Child and sibling selectors to change font weight to bold */
+        h2 > strong,
+        section + section h3 {
+            font-weight: bold;
+        }
+
+        /* :hover pseudo-class to change background color on hover */
+        a:hover,
+        .highlight:hover {
+            background-color: lightgray;
+        }
+
+        /* :last-child pseudo-class to change text color of the last column in the table */
+        table td:last-child {
+            color: blue;
+        }
+
+        /* :even and :odd pseudo-classes to alternate styles of rows in unordered list and table */
+        ul li:nth-child(even),
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        ul li:nth-child(odd),
+        table tr:nth-child(odd) {
+            background-color: #e0e0e0;
+        }
+
+        /* ::first-letter on <p> element to change font-size of the first letter */
+        p::first-letter {
+            font-size: larger;
+        }
+
+        /* ::selection pseudo-element to style the background of the user-selected text */
+        ::selection {
+            background-color: yellow;
+        }
+
+        /* ::before pseudo-element to emulate list style with Unicode character */
+        ul::before {
+            content: "\2022"; /* Unicode character for bullet point */
+            padding-right: 5px; /* Add padding between bullet and text */
+        }
+
+        /* :not pseudo-selector to change background color of elements except those with class "exclude" */
+        *:not(.exclude) {
+            background-color: lightblue;
+        }
+
+        /* :is pseudo-selector to style elements using a single selector */
+        :is(h2, h3) {
+            color: darkred;
+        }
+    </style>
+</head>
+<body id="top">
+    <main>
+        <article id="text__paragraphs">
+            <h2>Understanding CSS Selectors</h2>
+            
+            <section>
+                <h3>Selector Specificity</h3>
+                <p><strong>Selector specificity</strong> is a measure of how specific a CSS selector is in targeting an element. It determines which style rules take precedence when multiple rules match the same element.</p>
+                <p>Specificity is calculated based on the type of selector and its components: inline styles, IDs, classes, elements, and pseudo-classes/pseudo-elements. Inline styles have the highest specificity, followed by IDs, classes, attributes, pseudo-classes, elements, and finally pseudo-elements.</p>
+                <p>For example, a selector targeting an element with an ID would have higher specificity than a selector targeting the same element with a class.</p>
+            </section>
+            
+            <section>
+                <h3>Complex Selectors</h3>
+                <p><strong>Complex selectors</strong> are CSS selectors that combine multiple simple selectors to target specific elements based on various conditions and relationships within the document tree.</p>
+                <p>These selectors can include combinators such as descendant selectors, child selectors, adjacent sibling selectors, and general sibling selectors to create more specific and precise targeting.</p>
+                <p>For example, a complex selector might target all paragraphs within a `<div>` element with a class of "container": <code>div.container p</code>.</p>
+            </section>
+            
+            <section>
+                <h3>Pseudo-classes vs Pseudo-elements</h3>
+                <p><strong>Pseudo-classes</strong> are keywords added to selectors that define a special state or condition of an element. They are preceded by a colon (:) in CSS selectors. Pseudo-classes include <code>:hover</code>, <code>:active</code>, <code>:focus</code>, <code>:first-child</code>, etc.</p>
+                <p><strong>Pseudo-elements</strong>, on the other hand, are keywords that target specific parts of an element's content or structure. They are preceded by two colons (::) in CSS selectors. Pseudo-elements include <code>::before</code>, <code>::after</code>, <code>::first-line</code>, <code>::first-letter</code>, etc.</p>
+                <p>The key difference between pseudo-
